@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-     new_matrix = matrix.copy()
-
-     for i in range(len(matrix)):
-          new_matrix[i] = list(map(lambda x: x**2, matrix[i]))
-          return (new_matrix)
+    new_matrix = []
+    for row in matrix:
+        transpose = []
+        for elem in row:
+            elem = elem * elem
+            transpose.append(elem)
+        new_matrix.append(transpose)
+    return new_matrix
